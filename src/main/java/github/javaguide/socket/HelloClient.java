@@ -20,6 +20,8 @@ public class HelloClient {
     public Object send(Message message, String host, int port) {
         try (Socket socket = new Socket(host, port)) {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
+
+            System.out.println("45646565");
             objectOutputStream.writeObject(message);
             ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
             return objectInputStream.readObject();
